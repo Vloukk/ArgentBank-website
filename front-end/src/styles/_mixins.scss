@@ -1,0 +1,21 @@
+// Mixin pour les appareils mobiles
+@mixin inferieur {
+    @media only screen and (max-width: 300px) {
+      @content;
+    }
+  }
+
+// Mixin pour les appareils mobiles
+@mixin mobile {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  }
+  
+  // Mixin pour les appareils de bureau
+  @mixin desktop {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  

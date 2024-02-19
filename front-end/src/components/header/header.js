@@ -15,7 +15,6 @@ function Header() {
             <Link to="/login">
               <LoginButton />
             </Link>
-            
         </nav>
     </div>
   );
