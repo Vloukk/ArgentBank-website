@@ -1,0 +1,11 @@
+
+.login-button {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    gap: 10px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
