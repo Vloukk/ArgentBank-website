@@ -5,6 +5,15 @@
     margin-right: 0.5rem;
     gap: 10px;
 
+    a {
+        display: flex;
+        background-color: red;
+    }
+
+    p {
+        line-height: 0;
+    }
+
     &:hover {
         text-decoration: underline;
     }

@@ -1,0 +1,59 @@
+
+.login {
+    height: 100vh;
+    background-color: #12002b;
+
+    .sign-in__content {
+        box-sizing: border-box;
+        background-color: $tertiary-color;
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 3rem;
+        padding: 2rem;
+
+        h1 {
+            font-size: 24px;
+            margin: 20px 0px;
+        }
+
+        .input__wrapper {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-bottom: 1rem;
+
+            label {
+                font-weight: bold;
+            }
+
+            input {
+                padding: 5px;
+                font-size: 1.2rem;
+            }
+        }
+
+        .input__remember {
+            display: flex;
+
+            input {
+                margin: 3px;
+            }
+
+            label {
+                margin: 0px 0px 0px 4px;
+            }
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            border-color: $btn-color;
+            background-color: $btn-color;
+            color: $tertiary-color;
+        }
+    }
+}
