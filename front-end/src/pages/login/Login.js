@@ -1,10 +1,11 @@
 import React from 'react';
+
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
-function Login() {
+const Login = () => {
 
   return (
     <div className='login bg-dark'>
@@ -18,14 +19,14 @@ function Login() {
             <input type="text" id="username" />
           </div>
           <div className='input__wrapper'>
-            <label htmlFor="username">Password</label>
-            <input type="text" id="password" />
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password"/>
           </div>
           <div className="input__remember">
             <input type="checkbox" id="remember-me" />
             <label htmlFor="remember-me">Remember me</label>
           </div>
-          <button className="sign-in__button">Sign In</button>
+          <button type="submit" className="sign-in__button">Sign In</button>
         </form>
       </div>
       <Footer />
