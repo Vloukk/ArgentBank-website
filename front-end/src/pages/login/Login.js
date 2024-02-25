@@ -1,4 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { login } from '../../redux/actions/authAction';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
@@ -6,6 +11,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Login = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const token = useSelector(state => state.auth.token);
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      console.log('Submitting login form...');
+      await dispatch(login(email, password));
+      console.log('Login form submitted successfully!');
+    } catch (error) {
+      console.error('Error submitting login form:', error);
+    }
+  };
+
+  useEffect(() => {
+    if (token) {
+      // Rediriger l'utilisateur vers une page après la connexion réussie
+      console.log('Redirecting to profile page...');
+      navigate('/profil');
+    }
+  }, [navigate, token]);
+  
 
   return (
     <div className='login bg-dark'>
@@ -13,14 +44,14 @@ const Login = () => {
       <div className='sign-in__content'>
         <FontAwesomeIcon icon={faUserCircle} className='user-icon'/>
         <h1 className='sign-in__title'>Sign In</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='input__wrapper'>
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" />
+            <input type="text" id="username" autoComplete="current-text" value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className='input__wrapper'>
             <label htmlFor="password">Password</label>
-            <input type="password" id="password"/>
+            <input type="password" id="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)}/>
           </div>
           <div className="input__remember">
             <input type="checkbox" id="remember-me" />

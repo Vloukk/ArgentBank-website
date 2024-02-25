@@ -5,7 +5,6 @@ import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Profil from './pages/profil/Profil';
 
-
 function App() {
   return (
     <Router>
