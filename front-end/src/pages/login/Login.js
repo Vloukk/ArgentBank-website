@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-
-import { login } from '../../redux/actions/authAction';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import { login } from '../../redux/actions/authAction';
+
+// Components
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
+// Fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
@@ -17,22 +18,20 @@ const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('Submitting login form...');
       await dispatch(login(email, password));
-      console.log('Login form submitted successfully!');
     } catch (error) {
-      console.error('Error submitting login form:', error);
+      setError('Invalid email or password. Please try again.');
     }
   };
 
   useEffect(() => {
     if (token) {
       // Rediriger l'utilisateur vers une page après la connexion réussie
-      console.log('Redirecting to profile page...');
       navigate('/profil');
     }
   }, [navigate, token]);
@@ -57,6 +56,7 @@ const Login = () => {
             <input type="checkbox" id="remember-me" />
             <label htmlFor="remember-me">Remember me</label>
           </div>
+          {error && <div className="error-message">{error}</div>}
           <button type="submit" className="sign-in__button">Sign In</button>
         </form>
       </div>
