@@ -21,18 +21,14 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('Submitting login form...');
       await dispatch(login(email, password));
-      console.log('Login form submitted successfully!');
     } catch (error) {
-      console.error('Error submitting login form:', error);
     }
   };
 
   useEffect(() => {
     if (token) {
       // Rediriger l'utilisateur vers une page après la connexion réussie
-      console.log('Redirecting to profile page...');
       navigate('/profil');
     }
   }, [navigate, token]);

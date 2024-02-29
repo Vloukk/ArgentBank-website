@@ -1,5 +1,4 @@
-// authActions.js
-import { loginSuccess, loginFailure } from '../reducers/authSlice';
+import { loginSuccess, loginFailure } from '../../redux/reducers/authSlice';
 import axios from 'axios';
 
 export const login = (email, password) => {
@@ -16,10 +15,4 @@ export const login = (email, password) => {
   };
 };
 
-
 //////////////////////////////////////////////////////////////////////////////////////////
-
-export const logout = () => (dispatch) => {
-  localStorage.removeItem('token');
-  dispatch({  });
-};
