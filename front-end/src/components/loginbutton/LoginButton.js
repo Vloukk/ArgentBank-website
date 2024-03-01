@@ -2,11 +2,13 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
+// Redux
 import  { logout } from '../../redux/reducers/authSlice'
 
 // Fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+
 
 function LoginButton() {
   const isConnected = useSelector((state) => state.auth.token);
@@ -14,6 +16,7 @@ function LoginButton() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Fonction de déconnexion de l'utilisateur
   const Logout = () => {
     dispatch(logout());
     localStorage.removeItem('token');

@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-import { login } from '../../redux/actions/authAction';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+// Redux
+import { login } from '../../redux/actions/authAction';
+
+// Components
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
+
+// Fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
@@ -15,9 +19,11 @@ const Login = () => {
   const navigate = useNavigate();
   const token = useSelector(state => state.auth.token);
 
+  // États locaux pour stocker l'email et le mot de passe entrés par l'utilisateur
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // Fonction de soumission du formulaire de connexion
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -28,13 +34,13 @@ const Login = () => {
 
   useEffect(() => {
     if (token) {
-      // Rediriger l'utilisateur vers une page après la connexion réussie
       navigate('/profil');
     }
   }, [navigate, token]);
   
 
   return (
+    <>
     <div className='login bg-dark'>
       <Header />
       <div className='sign-in__content'>
@@ -56,8 +62,9 @@ const Login = () => {
           <button type="submit" className="sign-in__button">Sign In</button>
         </form>
       </div>
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 }
 

@@ -1,6 +1,7 @@
 import { loginSuccess, loginFailure } from '../../redux/reducers/authSlice';
 import axios from 'axios';
 
+// Action de connexion
 export const login = (email, password) => {
   return async (dispatch) => {
     try {
