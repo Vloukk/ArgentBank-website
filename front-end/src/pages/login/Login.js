@@ -18,6 +18,7 @@ const Login = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const token = useSelector(state => state.auth.token);
+  const error = useSelector((state) => state.auth.error);
 
   // États locaux pour stocker l'email et le mot de passe entrés par l'utilisateur
   const [email, setEmail] = useState('');
@@ -37,6 +38,13 @@ const Login = () => {
       navigate('/profil');
     }
   }, [navigate, token]);
+
+  useEffect(() => {
+    if (error) {
+      // Affichez un message d'erreur à l'utilisateur
+      console.error(error);
+    }
+  }, [error]);
   
 
   return (

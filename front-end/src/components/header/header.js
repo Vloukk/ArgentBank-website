@@ -9,12 +9,10 @@ function Header() {
     <div className='header'>
         <nav className='header__nav'>
             <Link to="/">
-              <img className="logo" src={logo} alt="logo de l'agence kasa" />
+              <img className="logo" src={logo} alt="logo de argent bank" />
             </Link>
             <h1 className="sr-only">Argent Bank</h1>
-            <Link to="/login">
-              <LoginButton />
-            </Link>
+            <LoginButton />
         </nav>
     </div>
   );
