@@ -8,8 +8,12 @@
     a {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         line-height: 0;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .icon, a {
@@ -20,7 +24,9 @@
         line-height: 0;
     }
 
-    &:hover {
-        text-decoration: underline;
+    .connected {
+        display: flex;
+        align-items: center;
+        gap: 15px;
     }
 }

@@ -7,10 +7,10 @@ import { getUserProfile } from '../../../redux/actions/userAction';
 //Components
 import Header from '../../../components/header/Header';
 import Footer from '../../../components/footer/Footer'
+import UserWelcome from '../../../components/user/userWelcome';
 
 function Profil() {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
 
   useEffect(() => {
     dispatch(getUserProfile());
@@ -20,9 +20,7 @@ function Profil() {
     <>
       <div className='profil bg-dark'>
         <Header />
-        <div className='profil__header'>
-          <h2>Welcome back <br /> {user.firstname} {user.lastname} </h2>
-        </div>
+        <UserWelcome />
       </div>
       <Footer />
     </>

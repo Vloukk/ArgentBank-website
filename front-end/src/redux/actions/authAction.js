@@ -11,6 +11,7 @@ export const login = (email, password) => {
     } catch (error) {
       // Dispatch action pour indiquer une erreur de connexion
       dispatch(loginFailure(error.message));
+      throw error;
     }
   };
 };

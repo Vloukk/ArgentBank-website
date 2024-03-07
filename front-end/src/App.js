@@ -4,6 +4,8 @@ import './styles/App.scss';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Profil from './pages/profil/user/Profil';
+import UserProtect from './pages/profil/UserProtect';
+import NotFoundPage from './pages/notfoundpage/NotFoundPage';
 
 function App() {
   return (
@@ -11,7 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/profil" element={<Profil />} />
+        <Route path="/profil" element={<UserProtect><Profil /></UserProtect>} />
+        <Route path="/*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );

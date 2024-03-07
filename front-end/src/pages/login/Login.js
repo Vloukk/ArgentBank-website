@@ -46,11 +46,11 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div className='input__wrapper'>
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" autoComplete="current-text" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="text" id="username" autoComplete="current-text" value={email} onChange={(e) => setEmail(e.target.value)} className={error ? 'error-border' : ''}/>
           </div>
           <div className='input__wrapper'>
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <input type="password" id="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} className={error ? 'error-border' : ''}/>
           </div>
           <div className="input__remember">
             <input type="checkbox" id="remember-me" />

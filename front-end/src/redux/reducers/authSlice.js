@@ -16,6 +16,7 @@ export const authSlice = createSlice({
       state.error = null;
     },
     loginFailure: (state, action) => {
+      console.log('Login failure triggered:', action.payload); // Ajoutez cette ligne
       state.isAuthenticated = false;
       state.user = null;
       state.token = null; 

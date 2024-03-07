@@ -60,7 +60,11 @@
             color: red; /* Couleur du texte en rouge */
             font-size: 14px; /* Taille de la police */
             margin-top: 8px; /* Espacement vers le haut pour séparer du champ précédent */
-            border: 1px solid red;
+        }
+
+        .input__wrapper input.error-border {
+            border-color: red;
           }
+          
     }
 }

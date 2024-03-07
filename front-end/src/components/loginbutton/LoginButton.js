@@ -10,6 +10,7 @@ import { faUserCircle, faArrowRightFromBracket } from '@fortawesome/free-solid-s
 
 function LoginButton() {
   const isConnected = useSelector((state) => state.auth.token);
+  const firstname = useSelector((state) => state.user.firstname);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,8 +25,9 @@ function LoginButton() {
     <div className='login-button'>
       {isConnected ? (
           <div className='connected'>
-              <Link to='/profile'>
-                  <i className='fa-solid fa-2x fa-circle-user' />
+              <Link to='/profil'>
+                  <FontAwesomeIcon icon={faUserCircle} className='icon user-icon'/>
+                  <span>{firstname}</span>
               </Link>
               <Link to='/' onClick={Logout}>
                   <FontAwesomeIcon icon={faArrowRightFromBracket} className='icon sign-out-icon'/>
