@@ -1,6 +1,17 @@
 
-h2 {
-    color: $tertiary-color;
-    font-size: 2em;
-    font-weight: bold;
+.user__welcome {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+        color: $tertiary-color;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .btn-user {
+        padding: 10px;
+    }
 }

@@ -14,9 +14,9 @@ export const authSlice = createSlice({
       state.user = action.payload;
       state.token = action.payload.token;
       state.error = null;
+      localStorage.setItem('authToken', action.payload.token);
     },
     loginFailure: (state, action) => {
-      console.log('Login failure triggered:', action.payload); // Ajoutez cette ligne
       state.isAuthenticated = false;
       state.user = null;
       state.token = null; 
@@ -27,6 +27,7 @@ export const authSlice = createSlice({
       state.user = null;
       state.token = null;
       state.error = null;
+      localStorage.removeItem('authToken');
     },
   },
 });

@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { login } from '../../redux/actions/authAction';
+import { getUserProfile } from '../../redux/actions/userAction';
+import { loginSuccess } from '../../redux/reducers/authSlice';
 
 // Components
 import Header from '../../components/header/Header';
@@ -15,6 +17,7 @@ const Login = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const token = useSelector(state => state.auth.token);
+  const user = useSelector((state) => state.auth.user);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,14 +32,24 @@ const Login = () => {
     }
   };
 
+   // useEffect permettant de rester connecté après un rafraîchissement de la page 
   useEffect(() => {
-    if (token) {
-      // Rediriger l'utilisateur vers une page après la connexion réussie
+    const authToken = localStorage.getItem('authToken');
+  
+    if (authToken) {
+      dispatch(getUserProfile());
+      dispatch(loginSuccess({ token: authToken }));
+    }
+  }, [dispatch]);
+  
+  // useEffect séparé pour gérer la redirection
+  useEffect(() => {
+    if (user && token) {
       navigate('/profil');
     }
-  }, [navigate, token]);
+  }, [user, token, navigate]);
   
-
+  
   return (
     <div className='login bg-dark'>
       <Header />
