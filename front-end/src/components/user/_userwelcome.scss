@@ -4,14 +4,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
 
     h2 {
         color: $tertiary-color;
         font-size: 2em;
         font-weight: bold;
+        text-align: center;
     }
 
     .btn-user {
         padding: 10px;
+        margin: 0 auto;
     }
 }

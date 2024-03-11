@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../redux/actions/authAction';
 import { getUserProfile } from '../../redux/actions/userAction';
 import { loginSuccess } from '../../redux/reducers/authSlice';
@@ -9,6 +10,7 @@ import { loginSuccess } from '../../redux/reducers/authSlice';
 // Components
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
+
 // Fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'

@@ -1,0 +1,46 @@
+.uptdate-form__container {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    .update__form {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 50px;
+    
+        .input__wrapper {
+            display: flex;
+            text-align: left;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 10px;
+
+            label {
+                font-weight: bold;
+                color: $tertiary-color;
+            }
+
+            input {
+                padding: 5px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .button__form {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        button {
+            width: 100%;
+        }
+    }
+}

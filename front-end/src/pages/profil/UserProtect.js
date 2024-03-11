@@ -1,5 +1,7 @@
-import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
+
+// Redux
+import { useSelector } from 'react-redux';
 
 const UserProtect = ({ children }) => {
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);

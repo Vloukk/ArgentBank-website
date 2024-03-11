@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { GET_USER_PROFILE } from '../actions/userAction';
+import { GET_USER_PROFILE} from '../actions/userAction';
 
 const initialState = {
   name: '',
@@ -14,17 +14,32 @@ const initialState = {
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    // Reducer pour mettre à jour le profil utilisateur
+    updateUserProfile(state, action) {
+      const { firstname, lastname, email, username, createdAt, updatedAt } = action.payload;
+      state.firstname = firstname;
+      state.lastname = lastname;
+      state.email = email;
+      state.username = username;
+      state.createdAt = createdAt;
+      state.updatedAt = updatedAt;
+    },
+  },
   extraReducers: (builder) => {
+    // Gestion des actions supplémentaires
     builder.addCase(GET_USER_PROFILE, (state, action) => {
-      state.firstname = action.payload.firstName;
-      state.lastname = action.payload.lastName;
-      state.email = action.payload.email;
-      state.username = action.payload.username;
-      state.createdAt = action.payload.createdAt;
-      state.updatedAt = action.payload.updatedAt;
+      const { firstName, lastName, email, username, createdAt, updatedAt } = action.payload;
+      state.firstname = firstName;
+      state.lastname = lastName;
+      state.email = email;
+      state.username = username;
+      state.createdAt = createdAt;
+      state.updatedAt = updatedAt;
     });
   },
 });
+
+export const { updateUserProfile } = userSlice.actions;
 
 export default userSlice.reducer;
