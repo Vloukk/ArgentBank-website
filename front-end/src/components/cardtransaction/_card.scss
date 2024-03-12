@@ -5,43 +5,168 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 20px;
+
+    .card__container {
+        background-color: $tertiary-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        padding: 1.5rem;
+        box-sizing: border-box;
+        text-align: left;
+    
+        .card__info {
+            flex-grow: 1;
+    
+            h3 {
+                font-size: 1rem;
+                font-weight: normal;
+            }
+    
+            &__amount {
+                font-size: 2.5rem;
+                font-weight: bold;
+            }
+    
+            &__text {
+                font-size: 1rem;
+            }
+        }
+
+        span {
+            transition: all .5s ease-in-out;
+            cursor: pointer;
+        }
+    
+        .btn-card {
+            padding: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .fa-solid, .fa-xmark {
+            padding: 20px;
+            font-size: 2em;
+            color: $btn-color;
+        }
+
+        .fa-xmark {
+            font-size: 3em;
+        }
+    }
 }
 
-.card__container {
-    background-color: $tertiary-color;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid black;
-    background-color: #fff;
+.card__wrapper {
     width: 80%;
     margin: 0 auto;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    text-align: left;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
-    .card__info {
 
-        h3 {
-            font-size: 1rem;
-            font-weight: normal;
+/* Dans votre fichier CSS */
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0rem 1.5rem 1.5rem 1.5rem;
+    background-color: #fff;
+}
+
+.card__content__title {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Pour aligner les colonnes */
+    gap: 10px; /* Espacement entre les colonnes */
+    align-items: center; /* Pour aligner verticalement les éléments */
+    text-align: start;
+    padding: 0 1.5rem;
+  }
+  
+  .transaction__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacement entre les transactions */
+    text-align: start;
+    padding: 0.5em 1.5rem;
+    border-radius: 5px;
+    background-color: $btn-color;
+    color: $tertiary-color;
+
+    .table-body > .table-row> div:last-child {
+        text-align: end;
+
+        span {
+            cursor: pointer;
         }
+    }
+  }
+  
+  .table-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Pour aligner les colonnes */
+    align-items: center; /* Pour aligner verticalement les éléments */
 
-        &__amount {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
+    .table-btn {
+        cursor: pointer;
+    }
+  }
 
-        &__text {
-            font-size: 1rem;
+  .transaction__details {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+    "date1 . . . ." /* Définir les zones pour chaque paire de date */
+    "desc1 . . . ." /* Définir les zones pour chaque paire de description */
+    "amount1 . . . ."; /* Définir les zones pour chaque paire de montant */
+    margin-top: 30px;
+
+    .details__type, .details__order {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    div {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        input {
+            background-color: transparent;
+            border: none;
+
+            &:checked + label {
+                color: red;
+            }
         }
     }
 
-    .btn-card {
-        padding: 8px;
-        font-size: 1.1rem;
+    &:nth-child(2) {
         font-weight: bold;
-        margin-top: 1rem;
+    }
+
+        p {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .fa-solid {
+                font-size: 0.6em;
+                color: $tertiary-color;
+                cursor: pointer;
+
+                &:hover {
+                    color: #ccc;
+                }
+            }
+        }
     }
 }
+  

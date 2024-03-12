@@ -26,7 +26,10 @@ function Profil() {
         <UserWelcome />
         <div className='card__galery'>
             {AccountDtata.map((item) => (
-            <Card key={item.id} item={item} />
+            <Card 
+            key={item.id} 
+            item={item} 
+            />
           ))}
         </div>
       </div>
