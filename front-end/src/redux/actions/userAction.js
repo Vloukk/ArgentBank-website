@@ -22,10 +22,10 @@ export const getUserProfile = () => async (dispatch, getState) => {
       const response = await axios.post('http://localhost:3001/api/v1/user/profile', null, config);
       
       // Extrait les données du corps de la réponse
-      const { firstName, lastName, email, username, createdAt, updatedAt } = response.data.body;
+      const { firstName, lastName, email, userName, createdAt, updatedAt } = response.data.body;
 
       // Dispatche une action avec les données du profil utilisateur récupérées
-      dispatch({ type: GET_USER_PROFILE, payload: { firstName, lastName, email, username, createdAt, updatedAt } });
+      dispatch({ type: GET_USER_PROFILE, payload: { firstName, lastName, email, userName, createdAt, updatedAt } });
     } catch (error) {
       console.error('Error fetching user profile:', error);
     }

@@ -33,16 +33,6 @@ const Login = () => {
       setError('Invalid email or password. Please try again.');
     }
   };
-
-   // useEffect permettant de rester connecté après un rafraîchissement de la page 
-  useEffect(() => {
-    const authToken = localStorage.getItem('authToken');
-  
-    if (authToken) {
-      dispatch(getUserProfile());
-      dispatch(loginSuccess({ token: authToken }));
-    }
-  }, [dispatch]);
   
   // useEffect séparé pour gérer la redirection
   useEffect(() => {

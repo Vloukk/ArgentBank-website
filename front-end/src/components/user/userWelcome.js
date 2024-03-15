@@ -24,7 +24,7 @@ const UserWelcome = () => {
     <div className='user__welcome'>
       <h2>Welcome back <br /> {user.firstname} {user.lastname}!</h2>
       {isEditing ? ( // Affichez le formulaire de profil si l'édition est activée
-        <UpdateForm userData={user} onClose={handleCloseModal}/>
+        <UpdateForm user={user} onClose={handleCloseModal}/>
       ) : (
         <button className='btn-user' onClick={handleEditClick}>Edit Name</button>
       )}
