@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../redux/actions/authAction';
-import { getUserProfile } from '../../redux/actions/userAction';
-import { loginSuccess } from '../../redux/reducers/authSlice';
 
 // Components
 import Header from '../../components/header/Header';
