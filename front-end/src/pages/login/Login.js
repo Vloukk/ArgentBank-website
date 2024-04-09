@@ -45,6 +45,7 @@ const Login = () => {
   return (
     <div className='login bg-dark'>
       <Header />
+      <div className='sign-in__wrapper'>
       <div className='sign-in__content'>
         <FontAwesomeIcon icon={faUserCircle} className='user-icon'/>
         <h1 className='sign-in__title'>Sign In</h1>
@@ -64,6 +65,7 @@ const Login = () => {
           {error && <div className="error-message">{error}</div>}
           <button type="submit" className="sign-in__button">Sign In</button>
         </form>
+      </div>
       </div>
       <Footer />
     </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
+// Redux
 import  { logout } from '../../redux/reducers/authSlice'
 
 // Fontawesome
@@ -10,7 +11,7 @@ import { faUserCircle, faArrowRightFromBracket } from '@fortawesome/free-solid-s
 
 function LoginButton() {
   const isConnected = useSelector((state) => state.auth.token);
-  const firstname = useSelector((state) => state.user.firstname);
+  const username = useSelector((state) => state.user.username);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function LoginButton() {
           <div className='connected'>
               <Link to='/profil'>
                   <FontAwesomeIcon icon={faUserCircle} className='icon user-icon'/>
-                  <span>{firstname}</span>
+                  <span>{username}</span>
               </Link>
               <Link to='/' onClick={Logout}>
                   <FontAwesomeIcon icon={faArrowRightFromBracket} className='icon sign-out-icon'/>

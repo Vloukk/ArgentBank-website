@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser } from '../../redux/reducers/userSlice';
 import axios from 'axios';
+
+// Redux
+import { setUser } from '../../redux/reducers/userSlice';
 
 const UpdateForm = ({ user, onClose }) => {
   console.log('user:', user);

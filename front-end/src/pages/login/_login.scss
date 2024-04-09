@@ -1,7 +1,10 @@
 
 .login {
-    height: 100vh;
     background-color: #12002b;
+
+    .sign-in__wrapper {
+        height: calc(100vh - 200px);
+    }
 
     .sign-in__content {
         box-sizing: border-box;
